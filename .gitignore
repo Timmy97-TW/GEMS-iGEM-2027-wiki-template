@@ -1,0 +1,21 @@
+.DS_Store
+__pycache__/
+*.pyc
+public/
+.claude/settings.local.json
+# 圖、照片、字型一律放 static.igem.wiki，不進 repo
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.heic
+*.tif
+*.tiff
+*.mp4
+*.mov
+*.mp3
+*.woff
+*.woff2
+*.ttf
+*.otf

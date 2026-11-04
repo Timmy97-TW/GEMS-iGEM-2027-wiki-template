@@ -1,0 +1,84 @@
+/* =============================================================================
+   Design tokens: THE ONE PLACE A TEAM THEME CHANGES.
+   -----------------------------------------------------------------------------
+   Every colour, font and spacing value on the site is read from here.
+   tools/check.py fails if a colour literal appears in any other stylesheet.
+
+   New theme: change the --brand-* ramp and --accent. Keep --brand-700 at 4.5:1
+   or better on white, because it is used for links and small text.
+
+   Fonts: the default is the reader's system font, including a Traditional
+   Chinese fallback, so nothing is downloaded. To use a team typeface, upload
+   the file through iGEM's uploads tool and un-comment the @font-face below.
+   iGEM requires fonts to be served from static.igem.wiki, never from a font CDN.
+   ========================================================================== */
+
+/*
+@font-face {
+  font-family: "TeamFont";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://static.igem.wiki/teams/TEAM_ID/wiki/fonts/teamfont.woff2") format("woff2");
+}
+*/
+
+:root {
+  /* ---- team colours: change these ---- */
+  --brand-900: #16324f;
+  --brand-700: #1f5a8a;
+  --brand-500: #3f83b8;
+  --brand-200: #c9dff0;
+  --brand-100: #e2eef7;
+  --brand-50:  #f3f8fc;
+  --accent:    #b4531f;
+
+  /* ---- neutrals ---- */
+  --white:    #ffffff;
+  --gray-50:  #fafafa;
+  --gray-100: #f4f4f5;
+  --gray-200: #e4e4e7;
+  --gray-400: #a1a1aa;   /* rules and strokes only, never words */
+  --gray-500: #62626b;
+  --gray-700: #3f3f46;
+  --ink:      #18181b;
+
+  /* ---- signal colours: callouts and draft marks only ---- */
+  --amber-700: #8a5a08;
+  --amber-100: #fdf3dc;
+  --rust-700:  #9a3d22;
+  --rust-100:  #fbeae4;
+
+  /* ---- type ---- */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  --font-display: var(--font-body);
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --text-h1:   clamp(2rem, 1.2rem + 2.8vw, 3.25rem);
+  --text-h2:   clamp(1.5rem, 1.15rem + 1.05vw, 2rem);
+  --text-h3:   clamp(1.15rem, 1.02rem + .4vw, 1.375rem);
+  --text-lede: clamp(1.0625rem, .95rem + .45vw, 1.3125rem);
+  --text-base: 1.0625rem;
+  --text-sm:   .9375rem;
+  --text-xs:   .8125rem;
+
+  /* ---- space ---- */
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: .75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: clamp(3rem, 1.5rem + 5vw, 5rem);
+
+  /* ---- frame ---- */
+  --nav-h:   64px;
+  --max:     1240px;
+  --measure: 70ch;
+  --radius:  .5rem;
+  --line:    1px solid var(--gray-200);
+  --shadow:  0 10px 30px -10px rgb(0 0 0 / .25);
+  --scrim:   rgb(0 0 0 / .85);
+}

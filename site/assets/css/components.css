@@ -1,0 +1,103 @@
+/* Components. Each block is documented in README.md, section 元件.
+   All colours and sizes come from tokens.css. */
+
+/* ---- figure with caption and F ID ----------------------------------------- */
+.fig { margin: var(--sp-5) 0; }
+.fig img, .fig svg { display: block; max-width: 100%; border-radius: var(--radius); }
+.fig:not(.fig--pending) img { cursor: zoom-in; }
+.fig figcaption { margin-top: var(--sp-2); font-size: var(--text-sm); color: var(--gray-700); max-width: var(--measure); }
+.fig__label { font-weight: 700; color: var(--brand-900); }
+.fig__slot {
+  display: grid; place-items: center; min-height: 170px; padding: var(--sp-4); text-align: center;
+  border: 2px dashed var(--gray-400); border-radius: var(--radius); background: var(--gray-50);
+  color: var(--gray-500); font-size: var(--text-sm);
+}
+.fig__id, .fact__id { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--gray-500); }
+body:not(.is-draft) .fig__id, body:not(.is-draft) .fact__id { display: none; }
+
+/* ---- fact with V ID ------------------------------------------------------- */
+.fact--pending { background: var(--amber-100); color: var(--amber-700); padding: 0 .3em; border-radius: .2em; font-family: var(--font-mono); font-size: .9em; }
+body.is-draft .fact:not(.fact--pending) { border-bottom: 1px dotted var(--gray-400); }
+
+/* ---- draft marks: guide boxes, placeholders, AI-drafted text --------------- */
+.guide { border-left: 4px solid var(--amber-700); background: var(--amber-100); padding: var(--sp-3) var(--sp-4); margin: var(--sp-3) 0; font-size: var(--text-sm); border-radius: 0 var(--radius) var(--radius) 0; max-width: var(--measure); }
+.guide b { color: var(--amber-700); }
+.guide p { margin: 0 0 var(--sp-2); }
+.guide p:last-child { margin: 0; }
+.ph { color: var(--gray-500); font-style: italic; }
+body.is-draft .ai { color: var(--accent); }
+
+/* ---- callout --------------------------------------------------------------- */
+.callout { border: var(--line); border-left: 4px solid var(--brand-500); border-radius: var(--radius); padding: var(--sp-3) var(--sp-4); margin: var(--sp-4) 0; max-width: var(--measure); }
+
+/* ---- citations ------------------------------------------------------------ */
+a.cite { text-decoration: none; font-weight: 600; }
+.refs ol { font-size: var(--text-sm); padding-left: var(--sp-5); max-width: var(--measure); }
+.refs li { margin-bottom: var(--sp-2); }
+.refs li:target { background: var(--brand-100); }
+
+/* ---- attribution ---------------------------------------------------------- */
+.attr { font-size: var(--text-sm); color: var(--gray-700); border-top: var(--line); padding-top: var(--sp-2); max-width: var(--measure); }
+.attr b { color: var(--brand-900); }
+
+/* ---- DBTL cycle ------------------------------------------------------------ */
+.cycle { border: var(--line); border-radius: var(--radius); padding: var(--sp-4); margin: var(--sp-5) 0; }
+.cycle > h3 { margin-top: 0; }
+.dbtl { list-style: none; padding: 0; margin: var(--sp-3) 0; display: grid; gap: var(--sp-3); max-width: none !important; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 52rem) { .dbtl { grid-template-columns: 1fr 1fr; } }
+.dbtl__step { background: var(--brand-50); border-radius: var(--radius); padding: var(--sp-3) var(--sp-4); min-width: 0; }
+.dbtl__step h4 { display: flex; align-items: center; gap: var(--sp-2); margin: 0 0 var(--sp-2); }
+.dbtl__badge { width: 1.7em; height: 1.7em; border-radius: 50%; background: var(--brand-700); color: var(--white); display: grid; place-items: center; font-size: .85em; flex: none; }
+.dbtl__step p { margin: 0 0 var(--sp-2); }
+.ledger { font-size: var(--text-sm); }
+
+/* ---- timeline -------------------------------------------------------------- */
+.timeline { list-style: none; margin: var(--sp-4) 0; padding: 0 0 0 var(--sp-5); border-left: 2px solid var(--brand-200); max-width: var(--measure); }
+.timeline li { position: relative; padding-bottom: var(--sp-5); }
+.timeline li::before { content: ""; position: absolute; left: calc(var(--sp-5) * -1 - 6px); top: .45em; width: 10px; height: 10px; border-radius: 50%; background: var(--brand-700); }
+.timeline time { display: block; font-size: var(--text-xs); font-weight: 700; color: var(--brand-700); }
+.timeline h3 { margin: 0 0 var(--sp-1); font-size: var(--text-base); }
+.timeline p { margin: 0; }
+
+/* ---- notebook -------------------------------------------------------------- */
+.nb-tools { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: var(--sp-3) 0; }
+.nb-tools input, .nb-tools select { font: inherit; font-size: var(--text-sm); padding: var(--sp-1) var(--sp-2); border: 1px solid var(--gray-400); border-radius: var(--radius); background: var(--white); color: var(--ink); max-width: 100%; }
+.nb-entry { border: var(--line); border-radius: var(--radius); margin-bottom: var(--sp-3); padding: var(--sp-3) var(--sp-4); }
+.nb-entry > summary { cursor: pointer; font-weight: 600; color: var(--brand-900); }
+.nb-entry time { font-family: var(--font-mono); font-size: var(--text-sm); margin-right: var(--sp-2); color: var(--gray-500); }
+.nb-entry__ids { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--gray-500); }
+
+/* ---- team cards ------------------------------------------------------------ */
+.team-filter { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: var(--sp-3) 0 var(--sp-4); }
+.team-filter button { font: inherit; font-size: var(--text-sm); padding: var(--sp-1) var(--sp-3); border: 1px solid var(--gray-400); border-radius: 999px; background: var(--white); color: var(--ink); cursor: pointer; }
+.team-filter button[aria-pressed="true"] { background: var(--brand-700); border-color: var(--brand-700); color: var(--white); }
+.team-grid { display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.member { border: var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.member__photo { aspect-ratio: 1; width: 100%; object-fit: cover; display: block; }
+.member__tile { aspect-ratio: 1; display: grid; place-items: center; background: var(--brand-100); color: var(--brand-700); font-size: 2rem; font-weight: 700; }
+.member__body { padding: var(--sp-3); font-size: var(--text-sm); }
+.member__name { margin: 0; font-size: var(--text-base); }
+.member__meta { color: var(--gray-500); font-size: var(--text-xs); margin: 0 0 var(--sp-2); }
+.member__bio { margin: 0 0 var(--sp-2); }
+.member__tasks { display: flex; flex-wrap: wrap; gap: var(--sp-1); list-style: none; margin: 0; padding: 0; }
+.member__tasks li { background: var(--brand-50); color: var(--brand-900); font-size: var(--text-xs); padding: 0 var(--sp-2); border-radius: 999px; }
+
+/* ---- stakeholder card (Human Practices) ------------------------------------- */
+.ihp-card { border: var(--line); border-radius: var(--radius); padding: var(--sp-4); margin: var(--sp-4) 0; }
+.ihp-card h3 { margin-top: 0; }
+.ihp-card dl { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-1) var(--sp-3); margin: 0; font-size: var(--text-sm); }
+.ihp-card dt { font-weight: 700; color: var(--brand-900); }
+.ihp-card dd { margin: 0 0 var(--sp-2); }
+@media (min-width: 40rem) { .ihp-card dl { grid-template-columns: 9rem minmax(0, 1fr); } }
+
+/* ---- tabs ------------------------------------------------------------------- */
+.tabs__strip { display: flex; flex-wrap: wrap; gap: var(--sp-1); border-bottom: var(--line); margin-bottom: var(--sp-3); }
+.tabs__btn { font: inherit; background: none; border: 0; padding: var(--sp-2) var(--sp-3); cursor: pointer; color: var(--gray-700); border-bottom: 3px solid transparent; }
+.tabs__btn[aria-selected="true"] { color: var(--brand-900); border-bottom-color: var(--brand-700); font-weight: 600; }
+
+/* ---- lightbox --------------------------------------------------------------- */
+.lightbox { display: none; position: fixed; inset: 0; z-index: 80; background: var(--scrim); padding: var(--sp-5); overflow: auto; }
+.lightbox.is-open { display: grid; place-items: center; }
+.lightbox img { max-height: 82vh; }
+.lightbox figcaption { color: var(--white); font-size: var(--text-sm); margin-top: var(--sp-2); }
+.lightbox__close { position: fixed; top: var(--sp-3); right: var(--sp-3); width: 44px; height: 44px; font-size: 1.5rem; border: 0; border-radius: 50%; background: var(--white); cursor: pointer; }

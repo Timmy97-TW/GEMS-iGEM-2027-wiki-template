@@ -1,0 +1,473 @@
+{
+ "_readme": "Single source tying each wiki page to its W-ID, URL and Drive folder. Edit here, then run python3 tools/build.py. Do not rename a standard slug: judges reach those pages by fixed URL.",
+ "site": {
+  "team_name": "GEMS Taiwan",
+  "team_slug": "gems-taiwan",
+  "year": 2027,
+  "project_name": "PROJECT_NAME",
+  "igem_team_id": "TEAM_ID",
+  "wiki_url": "https://2027.igem.wiki/gems-taiwan",
+  "gitlab_url": "https://gitlab.igem.org/2027/gems-taiwan",
+  "static_base": "https://static.igem.wiki/teams/TEAM_ID/wiki/",
+  "draft_marks": true,
+  "drive_root": "GEMS iGEM 2027/50 Deliverables/Wiki",
+  "figures_folder": "GEMS iGEM 2027/40 Media/Figures/Current"
+ },
+ "rules_basis": {
+  "status": "iGEM 2027 rules were not published when this was built (checked 2026-11-05). Every rule here is the 2026 rule. Re-check when iGEM publishes 2027.",
+  "sources": [
+   "https://competition.igem.org/judging/awards/medals",
+   "https://competition.igem.org/judging/awards/special",
+   "https://competition.igem.org/deliverables",
+   "https://gitlab.igem.org/templates/wiki-frozen-flask",
+   "2026 Judge Handbook, pp. 29, 45, 48"
+  ],
+  "assumed_for_2027": [
+   "wiki_url and gitlab_url pattern",
+   "team slug gems-taiwan",
+   "standard URL list"
+  ]
+ },
+ "classes": {
+  "required-igem": "Standard URL for a medal or special award, or a page iGEM's official wiki template ships by default",
+  "gems-yearly": "Not required by iGEM; GEMS writes it every year",
+  "topic-specific": "Exists because of one year's project; added with tools/build.py new"
+ },
+ "tabs": [
+  {
+   "id": "project",
+   "name": "Project"
+  },
+  {
+   "id": "wetlab",
+   "name": "Wet Lab"
+  },
+  {
+   "id": "drylab",
+   "name": "Dry Lab"
+  },
+  {
+   "id": "engagement",
+   "name": "Engagement"
+  },
+  {
+   "id": "team",
+   "name": "Team"
+  }
+ ],
+ "pages": [
+  {
+   "w_id": "W001",
+   "slug": "",
+   "url_path": "/",
+   "file": "index.html",
+   "title": "Home",
+   "tab": "",
+   "caption": "",
+   "class": "required-igem",
+   "igem_basis": "official-template-default",
+   "judged_for": [],
+   "drive_folder": "W001 Home",
+   "master_doc": "W001_Home_Master",
+   "creates_drive_folder": true,
+   "prize": false
+  },
+  {
+   "w_id": "W002",
+   "slug": "description",
+   "url_path": "/description",
+   "file": "description/index.html",
+   "title": "Description",
+   "tab": "project",
+   "caption": "The problem and our answer",
+   "class": "required-igem",
+   "igem_basis": "official-template-default",
+   "judged_for": [],
+   "drive_folder": "W002 Description",
+   "master_doc": "W002_Description_Master",
+   "creates_drive_folder": true,
+   "prize": false
+  },
+  {
+   "w_id": "W003",
+   "slug": "engineering",
+   "url_path": "/engineering",
+   "file": "engineering/index.html",
+   "title": "Engineering",
+   "tab": "project",
+   "caption": "Every build and test cycle",
+   "class": "required-igem",
+   "igem_basis": "standard-url-medal",
+   "judged_for": [
+    "Silver #1 Engineering Success"
+   ],
+   "drive_folder": "W003 Engineering",
+   "master_doc": "W003_Engineering_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W004",
+   "slug": "contribution",
+   "url_path": "/contribution",
+   "file": "contribution/index.html",
+   "title": "Contribution",
+   "tab": "project",
+   "caption": "What future teams can reuse",
+   "class": "required-igem",
+   "igem_basis": "standard-url-medal",
+   "judged_for": [
+    "Bronze #3 Contribution"
+   ],
+   "drive_folder": "W004 Contribution",
+   "master_doc": "W004_Contribution_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W005",
+   "slug": "results",
+   "url_path": "/results",
+   "file": "results/index.html",
+   "title": "Results",
+   "tab": "project",
+   "caption": "What we showed, with evidence",
+   "class": "required-igem",
+   "igem_basis": "official-template-default",
+   "judged_for": [],
+   "drive_folder": "W005 Results",
+   "master_doc": "W005_Results_Master",
+   "creates_drive_folder": true,
+   "prize": false
+  },
+  {
+   "w_id": "W006",
+   "slug": "alternative-platform",
+   "url_path": "/alternative-platform",
+   "file": "alternative-platform/index.html",
+   "title": "Alternative Platform",
+   "tab": "project",
+   "caption": "Work beyond the common hosts",
+   "class": "required-igem",
+   "igem_basis": "standard-url-award",
+   "judged_for": [
+    "Best Alternative Platform"
+   ],
+   "drive_folder": "W006 Alternative Platform",
+   "master_doc": "W006_AlternativePlatform_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W007",
+   "slug": "experiments",
+   "url_path": "/experiments",
+   "file": "experiments/index.html",
+   "title": "Experiments",
+   "tab": "wetlab",
+   "caption": "How the work was done",
+   "class": "required-igem",
+   "igem_basis": "official-template-default",
+   "judged_for": [],
+   "drive_folder": "W007 Experiments",
+   "master_doc": "W007_Experiments_Master",
+   "creates_drive_folder": true,
+   "prize": false
+  },
+  {
+   "w_id": "W008",
+   "slug": "parts",
+   "url_path": "/parts",
+   "file": "parts/index.html",
+   "title": "Parts",
+   "tab": "wetlab",
+   "caption": "Index to our Registry entries",
+   "class": "gems-yearly",
+   "igem_basis": "gems-recurring",
+   "judged_for": [],
+   "drive_folder": "W008 Parts",
+   "master_doc": "W008_Parts_Master",
+   "creates_drive_folder": true,
+   "prize": false
+  },
+  {
+   "w_id": "W009",
+   "slug": "measurement",
+   "url_path": "/measurement",
+   "file": "measurement/index.html",
+   "title": "Measurement",
+   "tab": "wetlab",
+   "caption": "How we know the numbers",
+   "class": "required-igem",
+   "igem_basis": "standard-url-award",
+   "judged_for": [
+    "Best Measurement"
+   ],
+   "drive_folder": "W009 Measurement",
+   "master_doc": "W009_Measurement_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W010",
+   "slug": "safety-and-security",
+   "url_path": "/safety-and-security",
+   "file": "safety-and-security/index.html",
+   "title": "Safety and Security",
+   "tab": "wetlab",
+   "caption": "Risks and how we manage them",
+   "class": "required-igem",
+   "igem_basis": "standard-url-award",
+   "judged_for": [
+    "Safety and Security Award"
+   ],
+   "drive_folder": "W010 Safety and Security",
+   "master_doc": "W010_SafetyAndSecurity_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W011",
+   "slug": "notebook",
+   "url_path": "/notebook",
+   "file": "notebook/index.html",
+   "title": "Notebook",
+   "tab": "wetlab",
+   "caption": "Wet lab record by date",
+   "class": "required-igem",
+   "igem_basis": "official-template-default",
+   "judged_for": [],
+   "drive_folder": "W011 Notebook",
+   "master_doc": "W011_Notebook_Master",
+   "creates_drive_folder": true,
+   "prize": false
+  },
+  {
+   "w_id": "W012",
+   "slug": "model",
+   "url_path": "/model",
+   "file": "model/index.html",
+   "title": "Model",
+   "tab": "drylab",
+   "caption": "What the model decided",
+   "class": "required-igem",
+   "igem_basis": "standard-url-award",
+   "judged_for": [
+    "Best Model"
+   ],
+   "drive_folder": "W012 Model",
+   "master_doc": "W012_Model_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W013",
+   "slug": "hardware",
+   "url_path": "/hardware",
+   "file": "hardware/index.html",
+   "title": "Hardware",
+   "tab": "drylab",
+   "caption": "Devices others can rebuild",
+   "class": "required-igem",
+   "igem_basis": "standard-url-award",
+   "judged_for": [
+    "Best Hardware"
+   ],
+   "drive_folder": "W013 Hardware",
+   "master_doc": "W013_Hardware_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W014",
+   "slug": "software",
+   "url_path": "/software",
+   "file": "software/index.html",
+   "title": "Software",
+   "tab": "drylab",
+   "caption": "Tools others can run",
+   "class": "required-igem",
+   "igem_basis": "standard-url-award",
+   "judged_for": [
+    "Best Software"
+   ],
+   "drive_folder": "W014 Software",
+   "master_doc": "W014_Software_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W015",
+   "slug": "drylab-notebook",
+   "url_path": "/drylab-notebook",
+   "file": "drylab-notebook/index.html",
+   "title": "Dry Lab Notebook",
+   "tab": "drylab",
+   "caption": "Computing and hardware record",
+   "class": "gems-yearly",
+   "igem_basis": "gems-recurring",
+   "judged_for": [],
+   "drive_folder": "W015 Dry Lab Notebook",
+   "master_doc": "W015_DrylabNotebook_Master",
+   "creates_drive_folder": true,
+   "prize": false
+  },
+  {
+   "w_id": "W016",
+   "slug": "human-practices",
+   "url_path": "/human-practices",
+   "file": "human-practices/index.html",
+   "title": "Human Practices",
+   "tab": "engagement",
+   "caption": "How the world changed the project",
+   "class": "required-igem",
+   "igem_basis": "standard-url-medal-and-award",
+   "judged_for": [
+    "Silver #2 Human Practices",
+    "Best Integrated Human Practices"
+   ],
+   "drive_folder": "W016 Human Practices",
+   "master_doc": "W016_HumanPractices_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W017",
+   "slug": "education",
+   "url_path": "/education",
+   "file": "education/index.html",
+   "title": "Education",
+   "tab": "engagement",
+   "caption": "Two-way learning with others",
+   "class": "required-igem",
+   "igem_basis": "standard-url-award",
+   "judged_for": [
+    "Best Education"
+   ],
+   "drive_folder": "W017 Education",
+   "master_doc": "W017_Education_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W018",
+   "slug": "entrepreneurship",
+   "url_path": "/entrepreneurship",
+   "file": "entrepreneurship/index.html",
+   "title": "Entrepreneurship",
+   "tab": "engagement",
+   "caption": "From project to product",
+   "class": "required-igem",
+   "igem_basis": "standard-url-award",
+   "judged_for": [
+    "Best Entrepreneurship"
+   ],
+   "drive_folder": "W018 Entrepreneurship",
+   "master_doc": "W018_Entrepreneurship_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W019",
+   "slug": "sustainability",
+   "url_path": "/sustainability",
+   "file": "sustainability/index.html",
+   "title": "Sustainability",
+   "tab": "engagement",
+   "caption": "Our work against the SDGs",
+   "class": "required-igem",
+   "igem_basis": "standard-url-award",
+   "judged_for": [
+    "Best Sustainable Development Impact"
+   ],
+   "drive_folder": "W019 Sustainability",
+   "master_doc": "W019_Sustainability_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W020",
+   "slug": "inclusivity",
+   "url_path": "/inclusivity",
+   "file": "inclusivity/index.html",
+   "title": "Inclusivity",
+   "tab": "engagement",
+   "caption": "Removing barriers to science",
+   "class": "required-igem",
+   "igem_basis": "standard-url-award",
+   "judged_for": [
+    "Inclusivity Award"
+   ],
+   "drive_folder": "W020 Inclusivity",
+   "master_doc": "W020_Inclusivity_Master",
+   "creates_drive_folder": true,
+   "prize": true
+  },
+  {
+   "w_id": "W021",
+   "slug": "laws-and-regulations",
+   "url_path": "/laws-and-regulations",
+   "file": "laws-and-regulations/index.html",
+   "title": "Laws and Regulations",
+   "tab": "engagement",
+   "caption": "What the rules mean for us",
+   "class": "gems-yearly",
+   "igem_basis": "gems-recurring",
+   "judged_for": [],
+   "drive_folder": "W021 Laws and Regulations",
+   "master_doc": "W021_LawsAndRegulations_Master",
+   "creates_drive_folder": true,
+   "prize": false
+  },
+  {
+   "w_id": "W022",
+   "slug": "team",
+   "url_path": "/team",
+   "file": "team/index.html",
+   "title": "Team",
+   "tab": "team",
+   "caption": "Who we are",
+   "class": "required-igem",
+   "igem_basis": "official-template-default",
+   "judged_for": [],
+   "drive_folder": "Team",
+   "master_doc": "Team Intro",
+   "creates_drive_folder": false,
+   "prize": false
+  },
+  {
+   "w_id": "W023",
+   "slug": "attributions",
+   "url_path": "/attributions",
+   "file": "attributions/index.html",
+   "title": "Attributions",
+   "tab": "team",
+   "caption": "Who did what",
+   "class": "gems-yearly",
+   "igem_basis": "gems-recurring",
+   "judged_for": [
+    "Bronze #2 Project Attributions (judged from the Attributions Form, not this page)"
+   ],
+   "drive_folder": "Team",
+   "master_doc": "Attribution",
+   "creates_drive_folder": false,
+   "prize": false
+  },
+  {
+   "w_id": "W024",
+   "slug": "milestone",
+   "url_path": "/milestone",
+   "file": "milestone/index.html",
+   "title": "Milestones",
+   "tab": "team",
+   "caption": "Our year by date",
+   "class": "gems-yearly",
+   "igem_basis": "gems-recurring",
+   "judged_for": [],
+   "drive_folder": "Team",
+   "master_doc": "Milestones Caption",
+   "creates_drive_folder": false,
+   "prize": false
+  }
+ ]
+}

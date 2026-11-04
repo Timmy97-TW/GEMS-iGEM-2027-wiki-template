@@ -1,0 +1,29 @@
+# Publishes site/ as the team wiki on gitlab.igem.org.
+# Same image, job name, artifact path and branch rules as iGEM's official 2026
+# template; the only difference is that the site is already static, so site/ is
+# copied into public/ instead of running flask freeze.
+image: python:3.12
+
+pages:
+  stage: build
+  script:
+    # Structural errors (missing standard page, no licence footer, outside host) stop the deploy.
+    - python3 tools/check.py
+    - rm -rf public
+    - cp -r site public
+    # The job artifact may not exceed 10 MiB (gitlab.igem.org instance limit, read 2026-11-05).
+    - |
+      python3 - <<'PY'
+      import os, sys
+      total = sum(os.path.getsize(os.path.join(d, f)) for d, _, fs in os.walk("public") for f in fs)
+      print("public/ is %.2f MiB of the 10 MiB artifact limit" % (total / 1048576.0))
+      sys.exit(1 if total > 10 * 1024 * 1024 else 0)
+      PY
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: always

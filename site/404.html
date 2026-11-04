@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page not found | GEMS Taiwan</title>
+  <link rel="icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg" />
+  <script>
+    /* iGEM serves this file from any address, so relative links would break.
+       Works at the iGEM address and in a local preview at the server root. */
+    var WIKI_BASE = location.pathname.indexOf("/gems-taiwan/") === 0 ? "/gems-taiwan/" : "/";
+    ["tokens", "site"].forEach(function (n) {
+      var l = document.createElement("link");
+      l.rel = "stylesheet";
+      l.href = WIKI_BASE + "assets/css/" + n + ".css";
+      document.head.appendChild(l);
+    });
+  </script>
+</head>
+<body>
+<main class="notfound">
+  <h1>This page does not exist</h1>
+  <p><a id="home" href="/">Back to the homepage</a></p>
+</main>
+<script>document.getElementById("home").href = WIKI_BASE;</script>
+<footer class="footer"><div class="footer__inner"><div class="footer__legal">
+  <p>&copy; 2027 &middot; Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</p>
+  <p>The repository used to create this website is available at <a href="https://gitlab.igem.org/2027/gems-taiwan">gitlab.igem.org/2027/gems-taiwan</a>.</p>
+</div></div></footer>
+</body>
+</html>
