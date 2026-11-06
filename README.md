@@ -2,7 +2,9 @@
 
 下一屆 wiki 的起點。頁面、網址、導覽、版型和元件都做好了，內容全部是占位。每一頁的方框寫著評審看什麼，照著填就好。
 
-**這份 repo 是私有的 GitHub template，不是評審看的那份。** 評審只看 iGEM 自己 GitLab 上部署出來的版本，其他網址上的內容不計分。
+**線上預覽：<https://timmy97-tw.github.io/GEMS-iGEM-2027-wiki-template/>**（每次 push 到 `main` 由 `.github/workflows/pages.yml` 自動更新）
+
+**這份 repo 是公開的 GitHub template，不是評審看的那份。** 評審只看 iGEM 自己 GitLab 上部署出來的版本，GitHub Pages 預覽和其他網址上的內容都不計分。
 
 ## 規則基準：這裡的規則都是 2026 年的
 
@@ -221,4 +223,4 @@ Freeze 之後 wiki 就鎖了，這些事要趕在結案（N35）前做：
 4. 把 repo 和 Drive 擁有權移交給 Ops，從 Handover Checklist 走一次。
 5. 記下當年最難維護的三件事，放進下一屆 Wiki Lead 的交接文。
 
-template 是私有的（決議 D-042）。要公開時：`gh repo edit --visibility public --accept-visibility-change-consequences`。
+template 原本是私有的（決議 D-042），2026-11-06 改為公開，好讓 GitHub Pages 能放預覽。要改回私有：`gh repo edit --visibility private --accept-visibility-change-consequences`（免費方案下 Pages 預覽會跟著停掉）。
