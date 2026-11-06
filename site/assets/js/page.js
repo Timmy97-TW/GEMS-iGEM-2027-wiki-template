@@ -11,7 +11,7 @@
   "use strict";
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => [...(r || document).querySelectorAll(s)];
-  const slug = (t) => t.toLowerCase().trim().replace(/[^\w一-鿿\s-]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-");
+  const slug = (t) => t.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-");
 
   /* ---- 1. outline ------------------------------------------------------- */
   function outline() {

@@ -56,7 +56,9 @@ BINARY = re.compile(r"\.(png|jpe?g|gif|webp|heic|tiff?|bmp|ico|mp4|mov|webm|mp3|
 COLOUR = re.compile(r"#[0-9a-fA-F]{3,8}\b|\b(?:rgb|rgba|hsl|hsla)\(")
 PLACEHOLDER_IDS = re.compile(r"\b(?:R____|C____|D____|I____|K____|S___@v_|BBa_____)")
 SETTINGS = re.compile(r"PROJECT_NAME|TEAM_ID")
-BRACKET = re.compile(r"\[[^\[\]]*[一-鿿][^\[\]]*\]")
+# A text placeholder is bracketed prose: it starts with a capital letter and has a space,
+# e.g. "[Why we approached them]". Citations like [1] and short terms like [Ca2+] do not match.
+BRACKET = re.compile(r"\[[A-Z][^\[\]]*\s[^\[\]]*\]")
 DATE_PH = re.compile(r"YYYY-MM(-DD)?")
 
 

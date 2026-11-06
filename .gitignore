@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 public/
 .claude/settings.local.json
-# 圖、照片、字型一律放 static.igem.wiki，不進 repo
+# Images, photos and fonts always go on static.igem.wiki, never in the repo
 *.png
 *.jpg
 *.jpeg

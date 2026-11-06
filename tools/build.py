@@ -125,20 +125,20 @@ def stamp(data, page):
 def fig(page, hint):
     w = page["w_id"]
     return ('<figure class="fig fig--pending" data-fig="F____" data-page="%s">\n'
-            '  <div class="fig__slot">F____｜%s<br />檔名 F_____%s_主題_vNN｜放 static.igem.wiki｜'
-            'Hub Figures「可上線」TRUE 才能換上</div>\n'
-            '  <figcaption><span class="fig__label"></span> [圖說：%s。寫清楚 n、統計方法與對照組。] '
+            '  <div class="fig__slot">F____ | %s<br />File name F_____%s_topic_vNN | hosted on static.igem.wiki | '
+            'swap in only when "Ready to publish" is TRUE in Hub Figures</div>\n'
+            '  <figcaption><span class="fig__label"></span> [Caption: %s. State n, the statistical method and the controls.] '
             '<span class="fig__id">F____</span></figcaption>\n'
             '</figure>\n' % (w, E(hint), w, E(hint)))
 
 
 def fact(hint):
-    return '<span class="fact fact--pending" data-v="V____" title="Hub Facts 的 V 編號">[V____ %s]</span>' % E(hint)
+    return '<span class="fact fact--pending" data-v="V____" title="V number in Hub Facts">[V____ %s]</span>' % E(hint)
 
 
-PARA = '<p class="ph" data-ph>[內文，由 content owner 從 Master doc 帶入。]</p>\n'
+PARA = '<p class="ph" data-ph>[Body text, brought in by the content owner from the Master doc.]</p>\n'
 ATTR = ('<p class="attr" data-ph><b>Attribution.</b> Designed by P___; carried out by P___; '
-        'checked by P___. External help: [名稱，要有 K____].</p>\n')
+        'checked by P___. External help: [Name; needs K____].</p>\n')
 
 
 def dbtl_step(letter, name, inner):
@@ -148,44 +148,44 @@ def dbtl_step(letter, name, inner):
 
 def block_dbtl(page, data):
     ph = '<p class="ph" data-ph>[%s]</p>\n'
-    steps = (dbtl_step("D", "Design", ph % "這一輪的假設與設計，為什麼這樣選")
-             + dbtl_step("B", "Build", ph % "實際做了什麼，對應哪個 C 或 H，寫 R____")
-             + dbtl_step("T", "Test", ph % "怎麼測，結果是什麼" + fig(page, "這一輪的測試結果"))
-             + dbtl_step("L", "Learn", ph % "假設被證實或推翻，下一輪因此改了什麼"))
-    return ('<div class="cycle" data-cycle="1">\n<h3>Cycle 1: [這一輪要解決的問題]</h3>\n'
+    steps = (dbtl_step("D", "Design", ph % "This cycle's hypothesis and design, and why we chose it")
+             + dbtl_step("B", "Build", ph % "What we actually built, which C or H it maps to, with R____")
+             + dbtl_step("T", "Test", ph % "How we tested it, and the result" + fig(page, "Test result for this cycle"))
+             + dbtl_step("L", "Learn", ph % "Was the hypothesis confirmed or refuted, and what did that change in the next cycle"))
+    return ('<div class="cycle" data-cycle="1">\n<h3>Cycle 1: [The problem this cycle tackles]</h3>\n'
             '<ol class="dbtl">\n%s</ol>\n'
             '<p class="ledger" data-ph>Evidence: R____ · F____ · %s · Decision D____</p>\n</div>\n'
-            '<!-- 下一輪：複製整個 .cycle，data-cycle 加一。 -->\n' % (steps, fact("這一輪的關鍵數字")))
+            '<!-- Next cycle: copy the whole .cycle and add one to data-cycle. -->\n' % (steps, fact("Key number for this cycle")))
 
 
 def block_notebook(page, data):
     entry = ('<details class="nb-entry" data-date="YYYY-MM-DD" data-run="R____">\n'
-             '  <summary><time>YYYY-MM-DD</time>[這次 Run 的標題]</summary>\n'
+             '  <summary><time>YYYY-MM-DD</time>[Title of this Run]</summary>\n'
              '  <p class="nb-entry__ids">R____ · S___@v_ · C____</p>\n'
-             '  <p class="ph" data-ph>[Plan 與 Results，從 Run Record 帶入；不要另外重打。]</p>\n'
+             '  <p class="ph" data-ph>[Plan and Results, brought in from the Run Record; do not retype them.]</p>\n'
              '</details>\n')
     return ('<div class="nb">\n<div class="nb-tools">\n'
             '<input class="nb-search" type="search" placeholder="Search entries" aria-label="Search entries" />\n'
             '<select class="nb-month" aria-label="Month"><option value="">All months</option></select>\n'
-            '</div>\n%s</div>\n<!-- 新一筆：複製一個 .nb-entry。 -->\n' % (entry * 3))
+            '</div>\n%s</div>\n<!-- New entry: copy one .nb-entry. -->\n' % (entry * 3))
 
 
 def block_parts(page, data):
-    row = ('<tr><td>[Part 名稱]</td><td><a href="https://registry.igem.org/">BBa_____</a></td>'
-           '<td>[Basic / Composite / Improved]</td><td>C____</td><td data-ph>[一句話：它做什麼]</td></tr>\n')
+    row = ('<tr><td>[Part name]</td><td><a href="https://registry.igem.org/">BBa_____</a></td>'
+           '<td>[Basic / Composite / Improved]</td><td>C____</td><td data-ph>[One sentence: what it does]</td></tr>\n')
     return ('<div class="table-scroll"><table>\n<thead><tr><th>Part</th><th>Registry</th><th>Type</th>'
             '<th>Construct ID</th><th>Function</th></tr></thead>\n<tbody>\n%s</tbody>\n</table></div>\n' % (row * 2))
 
 
 def block_ihp(page, data):
     return ('<article class="ihp-card" data-interaction="I____" data-consent="K____">\n'
-            '<h3>[對象：有 K 才能寫姓名或單位；沒有就寫角色]</h3>\n<dl>\n'
-            '<dt>Why them</dt><dd data-ph>[為什麼找他們]</dd>\n'
-            '<dt>What we asked</dt><dd data-ph>[問了什麼]</dd>\n'
-            '<dt>What we learned</dt><dd data-ph>[學到什麼；直接引述要有 V 與 K]</dd>\n'
-            '<dt>What changed</dt><dd data-ph>[專案因此改了什麼，寫 D____]</dd>\n'
+            '<h3>[Who: name or organisation only with a K; otherwise their role]</h3>\n<dl>\n'
+            '<dt>Why them</dt><dd data-ph>[Why we approached them]</dd>\n'
+            '<dt>What we asked</dt><dd data-ph>[What we asked]</dd>\n'
+            '<dt>What we learned</dt><dd data-ph>[What we learned; direct quotes need a V and a K]</dd>\n'
+            '<dt>What changed</dt><dd data-ph>[What changed in the project as a result, with D____]</dd>\n'
             '<dt>Records</dt><dd>I____ · K____</dd>\n</dl>\n</article>\n'
-            '<!-- 新一張：複製一個 .ihp-card。 -->\n')
+            '<!-- New card: copy one .ihp-card. -->\n')
 
 
 def block_team(page, data):
@@ -200,7 +200,7 @@ def block_attr_link(page, data):
 
 
 def block_attribution(page, data):
-    rows = "".join('<tr><th scope="row">%s</th><td>P___</td><td>P___</td><td>[名稱，要有 K____]</td></tr>\n' % a
+    rows = "".join('<tr><th scope="row">%s</th><td>P___</td><td>P___</td><td>[Name; needs K____]</td></tr>\n' % a
                    for a in ("Project idea", "Design", "Experiments", "Modelling and software", "Hardware",
                              "Human Practices", "Wiki and media"))
     return ('<div class="table-scroll"><table class="attr-table">\n<thead><tr><th>Area</th><th>Students</th>'
@@ -209,9 +209,9 @@ def block_attribution(page, data):
 
 
 def block_timeline(page, data):
-    item = ('<li><time datetime="YYYY-MM-DD">YYYY-MM-DD</time><h3>[這天發生什麼]</h3>'
-            '<p class="ph" data-ph>[一到兩句圖說，來自 Milestones Caption]</p></li>\n')
-    return '<ol class="timeline">\n%s</ol>\n%s<!-- 新一筆：複製一個 li。 -->\n' % (item * 3, fig(page, "這一年的代表照片"))
+    item = ('<li><time datetime="YYYY-MM-DD">YYYY-MM-DD</time><h3>[What happened that day]</h3>'
+            '<p class="ph" data-ph>[One or two sentences of caption, from Milestones Caption]</p></li>\n')
+    return '<ol class="timeline">\n%s</ol>\n%s<!-- New entry: copy one li. -->\n' % (item * 3, fig(page, "A photo that stands for the year"))
 
 
 def block_doors(page, data):
@@ -225,17 +225,17 @@ BLOCKS = {"dbtl": block_dbtl, "notebook": block_notebook, "parts": block_parts, 
           "team": block_team, "attribution-link": block_attr_link, "attribution": block_attribution,
           "timeline": block_timeline, "doors": block_doors}
 
-GENERIC = {"lede": "[這頁要說什麼。]", "sections": [
+GENERIC = {"lede": "[What this page is about.]", "sections": [
     ("Abstract", SHARED_ABSTRACT, {}),
-    ("Approach", "寫清楚做法與理由。這是補充頁，要從相關標準頁面連過來，評審不會自己找。", {"figs": ["做法示意"]}),
-    ("Results", "每個主張對應一張圖與數字。", {"figs": ["主要結果"], "facts": ["主要結果數值"]}),
+    ("Approach", "Explain the approach and the reasons for it. This is a supporting page: link to it from the relevant standard pages, because judges will not find it on their own.", {"figs": ["Diagram of the approach"]}),
+    ("Results", "Every claim gets one figure and one number.", {"figs": ["Main result"], "facts": ["Main result value"]}),
 ]}
 
 
 # ---- page scaffold -------------------------------------------------------------
 
 def section_html(page, data, heading, guide, opt):
-    out = ['<section>\n<h2>%s</h2>\n<aside class="guide"><b>評審看什麼：</b> %s</aside>\n' % (E(heading), E(guide))]
+    out = ['<section>\n<h2>%s</h2>\n<aside class="guide"><b>What judges look for:</b> %s</aside>\n' % (E(heading), E(guide))]
     block = opt.get("block")
     if block not in ("dbtl", "notebook", "parts", "ihp", "team", "attribution", "timeline", "doors"):
         out.append(PARA)
@@ -270,7 +270,7 @@ DOC = """<!DOCTYPE html>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>%(title)s</title>
-  <meta name="description" content="[一句話頁面摘要]" />
+  <meta name="description" content="[One-sentence page summary]" />
   <link rel="icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg" />
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
   <link rel="stylesheet" href="%(base)sassets/css/tokens.css" />
@@ -300,9 +300,9 @@ DOC = """<!DOCTYPE html>
 """
 
 REFS = ('<section class="refs" id="references">\n<h2>References</h2>\n'
-        '<aside class="guide"><b>評審看什麼：</b> Best Wiki 問內容是否有適當引用，包含圖片與過去隊伍的成果。'
-        '正文寫 [1] 會自動連到第 1 筆。沒引用就刪掉這一節。</aside>\n'
-        '<ol>\n<li data-ph>[作者. 標題. 期刊 年份. 連結]</li>\n</ol>\n</section>\n')
+        '<aside class="guide"><b>What judges look for:</b> Best Wiki asks whether content is properly cited, including images and past teams\' work. '
+        'Writing [1] in the text links to the first entry automatically. Delete this section if there are no references.</aside>\n'
+        '<ol>\n<li data-ph>[Author. Title. Journal Year. Link]</li>\n</ol>\n</section>\n')
 
 
 def scaffold(data, page):
@@ -326,7 +326,7 @@ def scaffold(data, page):
                         page["drive_folder"], site["figures_folder"]),
         "tab": page["tab"], "slug": page["slug"], "kicker": E(outline.get("kicker", tab)),
         "h1": E(page["title"] if page["slug"] else site["project_name"]),
-        "lede": E(outline.get("lede", "[這頁要說什麼。]")), "judged": judged,
+        "lede": E(outline.get("lede", "[What this page is about.]")), "judged": judged,
         "sections": "".join(section_html(page, data, h, g, o) for h, g, o in outline["sections"]),
         "refs": "" if page["slug"] in NO_REFS else REFS, "foot": footer(data, page), "extra": extra}
     with open(path, "w", encoding="utf-8") as fh:

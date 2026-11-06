@@ -11,9 +11,9 @@
      bio    two or three sentences the person wrote themselves
      tasks  short task names, shown as pills                                   */
 window.ROSTER = [
-  { pid: "P___", name: "[隊員姓名]", role: "", track: "Wet Lab", photo: "", bio: "[本人寫的簡介，2 到 3 句]", tasks: ["[任務]"] },
-  { pid: "P___", name: "[隊員姓名]", role: "", track: "Dry Lab", photo: "", bio: "[本人寫的簡介，2 到 3 句]", tasks: ["[任務]"] },
-  { pid: "P___", name: "[隊員姓名]", role: "", track: "Human Practices", photo: "", bio: "[本人寫的簡介，2 到 3 句]", tasks: ["[任務]"] },
-  { pid: "P___", name: "[Advisor 姓名]", role: "Advisor", track: "Advisors", photo: "", bio: "[本人寫的簡介，2 到 3 句]", tasks: ["[任務]"] },
-  { pid: "P___", name: "[老師姓名]", role: "Instructor", track: "Instructors and PI", photo: "", bio: "[本人寫的簡介，2 到 3 句]", tasks: ["[任務]"] }
+  { pid: "P___", name: "[Member name]", role: "", track: "Wet Lab", photo: "", bio: "[Bio written by the person, 2 to 3 sentences]", tasks: ["[Task]"] },
+  { pid: "P___", name: "[Member name]", role: "", track: "Dry Lab", photo: "", bio: "[Bio written by the person, 2 to 3 sentences]", tasks: ["[Task]"] },
+  { pid: "P___", name: "[Member name]", role: "", track: "Human Practices", photo: "", bio: "[Bio written by the person, 2 to 3 sentences]", tasks: ["[Task]"] },
+  { pid: "P___", name: "[Advisor name]", role: "Advisor", track: "Advisors", photo: "", bio: "[Bio written by the person, 2 to 3 sentences]", tasks: ["[Task]"] },
+  { pid: "P___", name: "[Instructor name]", role: "Instructor", track: "Instructors and PI", photo: "", bio: "[Bio written by the person, 2 to 3 sentences]", tasks: ["[Task]"] }
 ];
